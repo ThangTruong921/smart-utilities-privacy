@@ -1,66 +1,380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Privacy Policy - Smart Utilities Plus</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      padding: 24px;
-      max-width: 800px;
-      margin: auto;
-      color: #222;
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#e9eefc;
+      --muted:#b8c4e6;
+      --accent:#4da3ff;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 12px 40px rgba(0,0,0,.25);
+      --radius: 16px;
     }
-    h1, h2 {
-      color: #000;
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f8ff;
+        --card:#ffffff;
+        --text:#0b1220;
+        --muted:#4b5b7a;
+        --accent:#0a6cff;
+        --border:rgba(10,20,40,.12);
+        --shadow: 0 10px 30px rgba(10,20,40,.08);
+      }
     }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.55;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(77,163,255,.18), transparent 55%),
+                  radial-gradient(1000px 600px at 90% 20%, rgba(124,92,255,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+    header{
+      padding: 18px 18px 6px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(180deg, rgba(77,163,255,.25), rgba(77,163,255,.05));
+      border: 1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: var(--shadow);
+    }
+    .logo svg{opacity:.95}
+    h1{
+      font-size: 28px; margin: 0;
+      letter-spacing: -0.3px;
+    }
+    .sub{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-top: 14px;
+    }
+    .toc{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top: 10px;
+    }
+    .chip{
+      display:inline-flex;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: 13px;
+    }
+    .chip:hover{background: rgba(255,255,255,.08); text-decoration:none}
+    h2{
+      margin: 18px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    p{margin: 8px 0; color: var(--text)}
+    .muted{color: var(--muted)}
+    ul{margin: 8px 0 10px 20px}
+    li{margin: 6px 0}
+    .note{
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      background: rgba(77,163,255,.08);
+      border-radius: 12px;
+      margin-top: 10px;
+      color: var(--text);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+    .box{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,.03);
+    }
+    footer{
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 4px;
+      text-align:center;
+    }
+    .lang-toggle{
+      display:flex; gap:8px; align-items:center;
+      margin-top: 10px;
+    }
+    .btn{
+      cursor:pointer;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+    .btn.active{border-color: rgba(77,163,255,.6); box-shadow: 0 0 0 3px rgba(77,163,255,.12) inset}
+    .hide{display:none}
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header class="card">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2s7 7.2 7 13a7 7 0 1 1-14 0c0-5.8 7-13 7-13Z" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+        <div>
+          <h1>Privacy Policy</h1>
+          <div class="sub">Smart Utilities Plus • Last updated: <strong>January 2026</strong></div>
+        </div>
+      </div>
 
-<h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> January 2026</p>
+      <div class="lang-toggle" role="group" aria-label="Language toggle">
+        <button class="btn active" id="btn-en" type="button">English</button>
+        <button class="btn" id="btn-vi" type="button">Tiếng Việt</button>
+      </div>
 
-<h2>1. Information We Access</h2>
-<p>
-Our app may request access to photos, videos, and contacts only to provide core features such as cleaning, organizing, and backing up data.
-</p>
+      <div class="toc" aria-label="Table of contents">
+        <a class="chip" href="#scope">Overview</a>
+        <a class="chip" href="#access">Data We Access</a>
+        <a class="chip" href="#purpose">Purpose</a>
+        <a class="chip" href="#ondevice">On-Device Processing</a>
+        <a class="chip" href="#collection">No Data Collection</a>
+        <a class="chip" href="#thirdparty">No Third-Party Sharing</a>
+        <a class="chip" href="#storage">Data Storage</a>
+        <a class="chip" href="#permissions">Permissions</a>
+        <a class="chip" href="#children">Children</a>
+        <a class="chip" href="#changes">Changes</a>
+        <a class="chip" href="#contact">Contact</a>
+      </div>
+    </header>
 
-<h2>2. How Your Data Is Used</h2>
-<ul>
-  <li>All data is processed locally on your device</li>
-  <li>We do not upload or store your data on any server</li>
-  <li>We do not collect personal information</li>
-  <li>We do not use tracking, analytics, or advertising SDKs</li>
-</ul>
+    <!-- EN -->
+    <main id="content-en" class="card">
+      <h2 id="scope">Overview</h2>
+      <p>
+        Smart Utilities Plus is designed to work primarily on your device. We respect your privacy and aim to be transparent about how the app accesses and uses your data.
+      </p>
+      <div class="note">
+        <strong>Important:</strong> Your photos, videos, and contacts are processed locally on your device. We do not upload your content to any server.
+      </div>
 
-<h2>3. Data Storage & Security</h2>
-<p>
-Your photos, videos, and contacts never leave your device. All actions such as deletion or backup require your confirmation.
-</p>
+      <h2 id="access">1. Data We Access</h2>
+      <p class="muted">The app may request permission to access the following data to provide core features:</p>
+      <ul>
+        <li><strong>Photos & Videos</strong> (to organize, identify duplicates, and suggest cleanup)</li>
+        <li><strong>Contacts</strong> (to manage contacts, identify duplicates/missing info, and backup/restore locally)</li>
+      </ul>
 
-<h2>4. Permissions</h2>
-<p>
-You can manage or revoke permissions at any time in your device settings. Some features may not work if permission is denied.
-</p>
+      <h2 id="purpose">2. Purpose of Data Access</h2>
+      <div class="grid">
+        <div class="box">
+          <strong>Photos & Videos</strong>
+          <ul>
+            <li>Find large files</li>
+            <li>Detect duplicate photos</li>
+            <li>Help you select items to delete</li>
+          </ul>
+        </div>
+        <div class="box">
+          <strong>Contacts</strong>
+          <ul>
+            <li>Find duplicates (name/number/email)</li>
+            <li>Find missing information (no name/no number)</li>
+            <li>Backup and restore contacts (local file on device)</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>5. Children’s Privacy</h2>
-<p>
-Our app does not knowingly collect data from children under the age of 13.
-</p>
+      <h2 id="ondevice">3. On-Device Processing</h2>
+      <p>
+        All analysis and processing are performed locally on your device. Your content (photos, videos, contacts) does not leave your device during scanning, duplicate detection, or cleanup suggestions.
+      </p>
 
-<h2>6. Changes to This Policy</h2>
-<p>
-This Privacy Policy may be updated from time to time. Any changes will be reflected on this page.
-</p>
+      <h2 id="collection">4. No Data Collection</h2>
+      <ul>
+        <li>We do <strong>not</strong> collect, store, transmit, or sell your personal data.</li>
+        <li>We do <strong>not</strong> create user accounts.</li>
+        <li>We do <strong>not</strong> collect identifiers such as name, email, phone number, advertising ID, or device ID.</li>
+      </ul>
 
-<h2>7. Contact Us</h2>
-<p>
-If you have any questions about this Privacy Policy, please contact us at:
-</p>
-<p><strong>Email:</strong> storex.sp@gmail.com</p>
+      <h2 id="thirdparty">5. No Third-Party Sharing / No Tracking</h2>
+      <ul>
+        <li>We do <strong>not</strong> share your data with third parties.</li>
+        <li>We do <strong>not</strong> use tracking, analytics, or advertising SDKs.</li>
+      </ul>
 
+      <h2 id="storage">6. Data Storage</h2>
+      <p>
+        Any backup files created by the app are stored locally on your device and are fully controlled by you. Deletions or restore actions require your confirmation.
+      </p>
+
+      <h2 id="permissions">7. Permissions</h2>
+      <p>
+        You can manage or revoke permissions at any time in your device settings. Some features may not work if permission is denied or limited.
+      </p>
+
+      <h2 id="children">8. Children’s Privacy</h2>
+      <p>
+        The app does not knowingly collect personal information from children under the age of 13.
+      </p>
+
+      <h2 id="changes">9. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated “Last updated” date.
+      </p>
+
+      <h2 id="contact">10. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:storex.sp@gmail.com">storex.sp@gmail.com</a></p>
+    </main>
+
+    <!-- VI -->
+    <main id="content-vi" class="card hide">
+      <h2 id="scope-vi">Tổng quan</h2>
+      <p>
+        Smart Utilities Plus được thiết kế để hoạt động chủ yếu trên thiết bị của bạn. Chúng tôi tôn trọng quyền riêng tư và minh bạch về cách ứng dụng truy cập và sử dụng dữ liệu.
+      </p>
+      <div class="note">
+        <strong>Quan trọng:</strong> Ảnh, video và danh bạ của bạn được xử lý trực tiếp trên thiết bị. Chúng tôi không tải nội dung của bạn lên bất kỳ máy chủ nào.
+      </div>
+
+      <h2 id="access-vi">1. Dữ liệu ứng dụng có thể truy cập</h2>
+      <p class="muted">Ứng dụng có thể yêu cầu quyền truy cập các dữ liệu sau để cung cấp tính năng cốt lõi:</p>
+      <ul>
+        <li><strong>Ảnh & Video</strong> (để sắp xếp, phát hiện trùng lặp và gợi ý dọn dẹp)</li>
+        <li><strong>Danh bạ</strong> (để quản lý, phát hiện trùng lặp/thiếu thông tin và sao lưu/khôi phục cục bộ)</li>
+      </ul>
+
+      <h2 id="purpose-vi">2. Mục đích truy cập dữ liệu</h2>
+      <div class="grid">
+        <div class="box">
+          <strong>Ảnh & Video</strong>
+          <ul>
+            <li>Tìm tệp dung lượng lớn</li>
+            <li>Phát hiện ảnh trùng lặp</li>
+            <li>Hỗ trợ bạn chọn mục để xoá</li>
+          </ul>
+        </div>
+        <div class="box">
+          <strong>Danh bạ</strong>
+          <ul>
+            <li>Tìm trùng lặp (tên/số/email)</li>
+            <li>Tìm thiếu thông tin (không tên/không số)</li>
+            <li>Sao lưu và khôi phục danh bạ (tệp lưu cục bộ trên thiết bị)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="ondevice-vi">3. Xử lý trên thiết bị</h2>
+      <p>
+        Mọi phân tích và xử lý được thực hiện trực tiếp trên thiết bị. Nội dung của bạn (ảnh, video, danh bạ) không rời khỏi thiết bị trong quá trình quét, phát hiện trùng lặp hoặc gợi ý dọn dẹp.
+      </p>
+
+      <h2 id="collection-vi">4. Không thu thập dữ liệu</h2>
+      <ul>
+        <li>Chúng tôi <strong>không</strong> thu thập, lưu trữ, truyền tải hoặc bán dữ liệu cá nhân của bạn.</li>
+        <li>Ứng dụng <strong>không</strong> tạo tài khoản người dùng.</li>
+        <li>Chúng tôi <strong>không</strong> thu thập định danh như tên, email, số điện thoại, ID quảng cáo hoặc ID thiết bị.</li>
+      </ul>
+
+      <h2 id="thirdparty-vi">5. Không chia sẻ bên thứ ba / Không theo dõi</h2>
+      <ul>
+        <li>Chúng tôi <strong>không</strong> chia sẻ dữ liệu của bạn với bên thứ ba.</li>
+        <li>Chúng tôi <strong>không</strong> sử dụng SDK theo dõi, phân tích hoặc quảng cáo.</li>
+      </ul>
+
+      <h2 id="storage-vi">6. Lưu trữ dữ liệu</h2>
+      <p>
+        Mọi tệp sao lưu do ứng dụng tạo ra đều được lưu cục bộ trên thiết bị và bạn toàn quyền kiểm soát. Các thao tác xoá/khôi phục đều yêu cầu bạn xác nhận.
+      </p>
+
+      <h2 id="permissions-vi">7. Quyền truy cập</h2>
+      <p>
+        Bạn có thể quản lý hoặc thu hồi quyền bất kỳ lúc nào trong Cài đặt thiết bị. Một số tính năng có thể không hoạt động nếu quyền bị từ chối hoặc bị giới hạn.
+      </p>
+
+      <h2 id="children-vi">8. Quyền riêng tư trẻ em</h2>
+      <p>
+        Ứng dụng không cố ý thu thập thông tin cá nhân từ trẻ em dưới 13 tuổi.
+      </p>
+
+      <h2 id="changes-vi">9. Thay đổi chính sách</h2>
+      <p>
+        Chúng tôi có thể cập nhật Chính sách quyền riêng tư theo thời gian. Mọi thay đổi sẽ được đăng trên trang này và cập nhật “Lần cập nhật”.
+      </p>
+
+      <h2 id="contact-vi">10. Liên hệ</h2>
+      <p>Nếu bạn có câu hỏi về Chính sách quyền riêng tư, vui lòng liên hệ:</p>
+      <p><strong>Email:</strong> <a href="mailto:storex.sp@gmail.com">storex.sp@gmail.com</a></p>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Smart Utilities Plus • Privacy Policy
+    </footer>
+  </div>
+
+  <script>
+    const btnEn = document.getElementById('btn-en');
+    const btnVi = document.getElementById('btn-vi');
+    const en = document.getElementById('content-en');
+    const vi = document.getElementById('content-vi');
+
+    function setLang(lang){
+      if(lang === 'vi'){
+        en.classList.add('hide');
+        vi.classList.remove('hide');
+        btnVi.classList.add('active');
+        btnEn.classList.remove('active');
+        document.documentElement.lang = 'vi';
+        localStorage.setItem('pp_lang', 'vi');
+      } else {
+        vi.classList.add('hide');
+        en.classList.remove('hide');
+        btnEn.classList.add('active');
+        btnVi.classList.remove('active');
+        document.documentElement.lang = 'en';
+        localStorage.setItem('pp_lang', 'en');
+      }
+    }
+
+    btnEn.addEventListener('click', () => setLang('en'));
+    btnVi.addEventListener('click', () => setLang('vi'));
+
+    const saved = localStorage.getItem('pp_lang') || 'en';
+    setLang(saved);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
